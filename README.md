@@ -6,6 +6,7 @@
 
 <!--- DESCRIPTION --->
   > Yet another multipurpose bot for Discord.
+
   > This project was discontinued on March 26, 2021 and now archived as of September 25, 2021.
   
 <!--- BADGES --->
