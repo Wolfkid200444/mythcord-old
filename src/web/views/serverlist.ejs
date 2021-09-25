@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <%- include('partials/head', { bot, user, path, title: "Home" }); %>
+    </head>
+    <body>
+
+      <%- include('partials/cookies'); %>
+      <section class="section section-one">
+          <div class="hero">
+            <%- include('partials/navigation'); %>
+
+            <div class="hero-body">
+                <div class="header-textarea">
+                  <h3 class="title serverlist-title has-text-white">
+                    Please choose a server to manage!
+                  </h3>
+                  <p class="subtitle serverlist-subtitle">
+                    Stuck or need help configuring your server? Join the Support Server.
+                  </p>
+
+                  <% user.guilds.forEach(guild => {
+                      const permsOnGuild = new perms(guild.permissions);
+                      if(!permsOnGuild.has("MANAGE_GUILD")) return;
+                  %>
+
+                  <div class="image-card">
+                  <% if (bot.guilds.cache.get(guild.id)) { %>
+                    <div class="server-card card-image">
+                      <a href="/dashboard/<%= guild.id %>">
+                        <img id="discord-image" src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %>.png?size=2048" alt="Server Avatar" onerror="this.parentNode.removeChild(this)">
+                      </a>
+
+                    </div>
+                  <% } %>
+                  </div>        
+                  <% }); %>
+                  
+                </div>
+            </div>
+          </div>
+      </section>
+
+      <script>
+        var imgs = document.getElementsByTagName('img')
+            for(var i=0,j=imgs.length;i<j;i++){
+                imgs[i].onerror = function(e){
+                this.parentNode.removeChild(this);
+            }
+        }
+      </script>
+
+
+      <%- include('partials/footer'); %>
+    </body>
+</html>

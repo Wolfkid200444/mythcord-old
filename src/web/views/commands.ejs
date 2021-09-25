@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <%- include('partials/head'); %>
+    </head>
+    <body onload="openTabs(event, 'All')">
+
+      <%- include('partials/cookies'); %>
+
+      <section class="section section-one">
+        <div class="container">
+          <div class="hero">
+            <%- include('partials/navigation'); %>
+
+            <div class="hero-body">
+              <div class="hero-content content">
+
+                <h2 class="title">
+                  Commands
+                </h2>
+                <br>
+                <div class="columns">
+                  <div class="tab column is-narrow-mobile is-fullheight ">
+                    <div class="tab-content menu-list">
+                      <button class="sidebar-item tablinks btn btn--magenta active-tab" onclick="openTabs(event, 'All')">All</button>
+                      <button class="sidebar-item tablinks btn btn--magenta" onclick="openTabs(event, 'Core')">Core</button>
+                      <button class="sidebar-item tablinks btn btn--magenta" onclick="openTabs(event, 'Entertainment')">Entertainment</button>
+                      <button class="sidebar-item tablinks btn btn--magenta" onclick="openTabs(event, 'Utility')">Utility</button>
+                      <button class="sidebar-item tablinks btn btn--magenta" onclick="openTabs(event, 'Configuration')">Configuration</button>
+                      <button class="sidebar-item tablinks btn btn--magenta" onclick="openTabs(event, 'Moderation')">Moderation</button>
+                    </div>
+                  </div>
+                  <div id="All" class="tabcontent column">
+                    <%- commands.filter(cmd => cmd.categoryID === "core").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                    <%- commands.filter(cmd => cmd.categoryID === "entertainment").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                    <%- commands.filter(cmd => cmd.categoryID === "utility").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                    <%- commands.filter(cmd => cmd.categoryID === "configuration").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                  </div>
+                  <div id="Core" class="tabcontent column">
+                    <%- commands.filter(cmd => cmd.categoryID === "core").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                  </div>
+                  <div id="Entertainment" class="tabcontent column">
+                    <%- commands.filter(cmd => cmd.categoryID === "entertainment").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                  </div>
+                  <div id="Utility" class="tabcontent column">
+                    <%- commands.filter(cmd => cmd.categoryID === "utility").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                  </div>
+                  <div id="Configuration" class="tabcontent column">
+                    <%- commands.filter(cmd => cmd.categoryID === "configuration").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                  </div>
+                  <div id="Moderation" class="tabcontent column">
+                    <%- commands.filter(cmd => cmd.categoryID === "moderation").map(cmd => `<button class="accordion"><h3>&gt; ${cmd.id}</h3></button> <div class="panel"><p><br>${cmd.description.content}<br><span id="grey">Aliases: ${cmd.aliases.join(", ")}</span><br><br></p></div>`).join("\n"); %> 
+                  </div>
+
+                </div>
+
+                
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <%- include('partials/footer'); %>
+    </body>
+</html>

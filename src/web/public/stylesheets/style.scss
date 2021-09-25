@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+    
+$primary-black: #19191b;
+$secondary-black: #393b3b;
+
+$primary-red: #de9dac;
+$secondary-red: #f7afc0;
+
+$primary-green: #9ddeaf;
+$secondary-green: #aff7c3;
+
+$primary-yellow: #f4e0d8;
+$secondary-yellow: #f7f6af;
+
+$primary-blue: #9dacde;
+$secondary-blue: #afc0f7;
+ 
+$primary-magenta: #af9dde;
+$secondary-magenta: #c3aff7;
+
+$primary-cyan: #9dccde;
+$secondary-cyan: #afe3f7;
+
+$primary-white: #ffffff;
+$secondary-white: #f9ece8;
+
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Lexend Deca', sans-serif;
+
+$background: #f5f6fa;
+$text: #9c9c9c;
+$input-bg-color: #fff;
+$input-text-color: #a3a3a3;
+$button-bg-color: #7f8ff4;
+$button-text-color: #fff;
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: $primary-font;
+    background-color: $primary-black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-white;
+
+
+}
+
+.cookie-banner {
+	position: fixed;
+	bottom: 40px;
+	left: 10%;
+    right: 10%;
+    width: 80%;
+    padding: 5px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $secondary-black;
+    border-radius: 5px;
+    // box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    color: $primary-white;
+}
+
+.hero-body {
+    padding-top: 240px;
+    transition: all .3s ease-in-out;
+    
+    h1, p, h2, h3 {
+        color: $primary-white;
+    }
+
+    .title {
+        letter-spacing: 2px;
+        font-size: 35px;
+        font-weight: 700;
+        transition: all .3s ease-in-out;
+    }
+    .subtitle-top {
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    .subtitle-bottom {
+        letter-spacing: 1px;
+        font-weight: 500;
+        line-height: 19px;
+        transition: all .3s ease-in-out;  
+    }
+
+    .button {
+        font-family: $secondary-font;
+        margin-top: 10px;
+    }
+}
+
+.highlight {
+    color: #ff8888;
+}
+
+code {
+    color: $primary-white;
+    background-color: $primary-black;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+#grey {
+    color: #B8B9BA;
+}
+
+.la-exclamation-triangle {
+    font-size: 34px !important;
+}
+
+.las, .lab {
+    margin-right: 2.3px;
+    font-size: 20px;
+}
+
+.navbar {
+    padding: 10px 12px 0px 12px;
+
+    .navbar-item {
+        font-family: $primary-font;
+        letter-spacing: 1px;
+        transition: letter-spacing 0.5s;
+
+        font-weight: 560;
+
+        margin-top: 22px;
+        margin-bottom: 22px;
+        margin-left: 22px;
+        margin-right: 22px;
+
+
+        &:hover {
+            color: $primary-blue !important;
+            transition: all .3s ease-in-out;
+        }
+    }
+    .navbar-title {
+        font-size: 34px;
+        font-weight: bold;
+        letter-spacing: 2px;
+
+        &:hover {
+            letter-spacing: 4px;
+            transition: all .3s ease-in-out;
+        }
+    }
+
+    .is-active {
+        background-color: #1b1b1b;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar-end {
+        figure {
+            visibility: hidden;
+            display: none;
+        }
+    }
+}
+
+.panel,
+.panel-heading,
+.panel-block,
+.panel-tabs,
+.panel-tabs a {
+    color: $primary-white;
+    background-color: $primary-black;
+}
+
+.section {
+    background-color: $primary-black;
+}
+
+.sidebar-item {
+    color: $primary-white;
+}
+
+.card,
+.card-header-title {
+    background-color: $primary-black;
+    color: $primary-white;
+}
+
+.card {
+    .subtitle {
+        color: #fff;
+        margin-bottom: 18px;
+        font-weight: 750;
+        text-transform: uppercase;
+        font-size: .95em;   
+    }
+}
+
+.table {
+    background-color: #040404;
+    border: 1px solid #040404;
+}
+
+.card-header-title {
+    display: block;
+    text-transform: uppercase;
+    font-size: .75em;
+}
+
+.container-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.btn {
+	display: inline-block;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: 0;
+	outline: 0;
+	padding: 0;
+    transition: all 200ms ease-in;
+	cursor: pointer;
+	
+    &--magenta {
+        background-color: #ff8888;
+        color: $primary-black;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+		border-radius: 2px;
+		padding: 12px 36px;
+        margin-bottom: 22px;
+        font-weight: 750;
+
+        &:hover {
+			background: #b35f5f;
+		}
+    }
+	&--inside {
+		margin-left: -96px;
+	}
+
+    &--call-to-action {
+        color: $primary-black;
+    }
+}
+
+.form {	
+	&__field {
+		width: 260px;
+        // background: #fff;
+        background: $secondary-black;
+        border-radius: 8px;
+		color: $input-text-color;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+		border: 0;
+		outline: 0;
+		padding: 12px 18px;
+	}
+}
+        
+.level {
+    .level-item {
+        .title, .heading {
+            color: $primary-white;
+        }
+
+        .title {
+            font-size: 18px;
+        }
+    }
+}
+aside {
+    .menu-dashboard,
+    .menu-server {
+        .menu-label {
+            color: $primary-white;
+        }
+        
+        ul {
+            li {
+                a {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+
+.menu {
+    .menu-title {
+        font-size: 14px;
+    }
+    .menu-item {
+        &:hover {
+            background: #101010;
+        }
+    }
+    ul {
+        li {
+            list-style-type: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 4px;
+            margin: 4px;
+        }
+    }
+}
+
+.image-card {
+	display: flex;
+	flex-direction: row;
+    display: inline;
+}
+
+
+img {
+    // width: 367px;
+    height: 220px;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10px;
+    border-top-left-radius: 0;
+    transform: skew(-5deg, -2deg);
+    margin: 2em 3em;
+    box-shadow: 8px 1px 12px rgba(0,0,0,.3)
+}
+
+.server-card {
+    object-fit: cover;
+    padding: 2px 2px 2px 2px;
+    display: inline;
+    top: 0;
+    transition: top ease 0.5s;
+
+    &:hover {
+        top: -20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        // box-shadow: 0 0 11px rgba(255, 233, 244,.2);  
+
+        &:after {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+
+            &:hover::after {
+                opacity: 1;
+            }
+        }
+    } 
+}
+    
+.section-card {
+    .card {
+        background-color: #2b2b2b;
+        // margin-top: 80px;
+        // position: relative;
+        top: 0;
+        transition: top ease 0.5s;
+
+        .card-image {
+            object-fit: cover;
+            width: 367px;
+            height: 200px;
+        }
+
+
+        &:hover {
+            top: -20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            // box-shadow: 0 0 11px rgba(255, 233, 244,.2);  
+
+            &:after {
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+
+                &:hover::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    h4, p {
+        // color: $primary-black;
+        color: $primary-white;
+    }
+}
+
+.greetings-module {
+    .label {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.section-footer {
+    font-family: 'Poppins', sans-serif;
+    background-color: $primary-black;
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: $primary-white;
+    padding: 30px 12px 0px 12px;
+    padding-bottom: 46px;
+
+    padding-top: 140px;
+
+
+    h6, p {
+        color: $primary-white;
+    }
+
+    a {
+        color: $primary-magenta;
+
+        &:hover {
+            color: $secondary-magenta;
+        }
+    }
+
+    
+  
+    .title {
+      color: $primary-white;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-top: 5px;
+      letter-spacing: 2px
+    }
+    .subtitle {
+      font-size: 16px;
+    }
+
+    li {
+      display: block
+    }
+   
+}
+
+form dl {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.tab-content {
+    background-color: #101010;
+    padding: 45px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.tabcontent {
+    display: none;
+    border-top: none;
+}
+
+.accordion {
+    background-color: #101010;
+    font-family: $primary-font;
+    font-weight: 600;
+    color: $primary-white;
+    cursor: pointer;
+    padding: 28px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:hover {
+    background-color: #0a0a0a;
+}
+
+.panel {
+    color: $primary-black;
+    padding: 0 18px;
+    background-color: #0a0a0a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+.input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}

@@ -1,0 +1,48 @@
+
+<div class="hero-head">
+    <nav class="navbar is-fixed-top is-transparent">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                <h2 class="navbar-title" id="navbar-title" style="color: #f1d3e8;">
+                   <!-- MYTHCORD -->
+                </h2>
+            </a>
+            <a role="button" class="burger navbar-burger" aria-label="menu" aria-expanded="false"  data-target="navbarMenu" style="color: white;">
+                <span aria-hidden="true"></span>    
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end has-text-centered">
+                <a href="/" class="navbar-item" style="color: white;">
+                    Home
+                </a>
+                <a href="/commands" class="navbar-item" style="color: white;">
+                    Commands
+                </a>
+                <a href="/serverlist" class="navbar-item" style="color: white;">
+                    Dashboard
+                </a>
+                <% if (user) { %>
+                    <a href="/logout" class="navbar-item" style="color: white;">
+                        <figure class="image is-32x32 discord-avatar" style="margin-right: 0.5em">
+                            <img class="is-rounded" src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>"  />
+                        </figure>
+                        <span class="login discord-name">
+                            <%= user.username %>#<%= user.discriminator %>
+                        </span>
+                    
+                    </a>
+                <% } else { %>
+                    <a href="/login" class="navbar-item" style="color: white;">
+                        <span class="login discord-name">
+                            Login with Discord
+                        </span>
+                    </a>
+                <% } %>
+                
+            </div>
+        </div>
+    </nav>
+</div>

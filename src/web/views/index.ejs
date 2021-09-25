@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <%- include('partials/head', { bot, user, path }); %>
+    </head>
+    <body>
+
+      <%- include('partials/cookies'); %>
+
+      <section class="section section-header">
+        <div class="container">
+          <div class="hero">
+            <%- include('partials/navigation'); %>
+
+            <div class="hero-body">
+              <div class="hero-content content">
+
+                <p class="subtitle subtitle-top hero-subtitle">
+                  INTRODUCING <span style="color: #f1d3e8;">MYTHCORD</span>
+                  <br>
+                </p>
+                <h1 class="title hero-title">
+                  YET 
+                  <span class="highlight">ANOTHER MULTIPURPOSE</span> 
+                  BOT FOR
+                  <span style="color: #f1d3e8;">DISCORD</span>
+                </h1>
+                <p class="subtitle subtitle-bottom hero-subtitle">
+                  It's simple to use! Why don't you try it out?
+                  <br>
+                </p>
+                <button class="btn btn--magenta">
+                  <a class="btn--call-to-action" href="https://discord.com/oauth2/authorize?client_id=777430209866891295&permissions=70577254&redirect_uri=https://discord.gg/9MHrwpf72U&scope=bot">
+                    Add to Discord
+                  </a>
+                </button>
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <%- include('partials/footer'); %>
+      
+    </body>
+</html>

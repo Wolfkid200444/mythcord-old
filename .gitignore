@@ -1,0 +1,10 @@
+.cache
+.vscode
+data
+dist
+logs
+tests
+node_modules
+
+.env
+package-lock.json

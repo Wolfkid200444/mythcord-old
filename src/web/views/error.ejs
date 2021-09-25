@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <%- include('partials/head'); %>
+    </head>
+    <body>
+
+      <%- include('partials/cookies'); %>
+      
+      <section class="section section-one">
+        <div class="container">
+          <div class="hero">
+
+
+            <div class="hero-body">
+              <div class="hero-content content">
+                
+                <h1 class="title">
+                  Hey there. Seems like something went wrong!
+                </h1>
+                <p class="subtitle">
+                  Please send this to our developers at the <a href="https://discord.gg/m55hgDQ" style="text-decoration: underline;">Discord server!</a> 🤖
+                  <br><br>
+                  <code>
+                    <%- err.stack -%>
+                  </code>
+                </p>
+                <br>
+                <a href="/" class="btn btn--primary" style="color: #010;">
+                  Return back!
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <%- include('partials/footer'); %>
+    </body>
+</html>

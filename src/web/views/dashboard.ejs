@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <%- include('partials/head'); %>
+    </head>
+    <body>
+
+      <%- include('partials/cookies'); %>
+      
+      <section class="section section-one">
+          <div class="hero">
+            <%- include('partials/navigation'); %>
+        </div>
+      </section>
+
+      <section class="section section-two dashboard columns">
+        <%- include('partials/dashboard-navigation'); %>
+
+        <div class="container column is-10">
+          <div class="card has-background-black">
+            <div class="card-content">
+              <div class="content">
+                <h4 class="title has-text-white">Overview</h4>
+                <div class="overview level has-text-centered">
+                  <div class="level-item">
+                    <div>
+                      <p class="heading">Owner</p>
+                      <p class="title"><code><%- guild.owner.user.tag %></code></p>
+                    </div>
+                  </div>
+                  <div class="level-item">
+                    <div>
+                      <p class="heading">Prefix</p>
+                      <p class="title"><code><%- prefix %></code></p>
+                    </div>
+                  </div>
+                  <div class="level-item">
+                    <div>
+                      <div>
+                        <p class="heading">Member Count</p>
+                        <p class="title"><code><%- guild.memberCount %></code></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="prefix">
+                  <h4 class="title has-text-white">Prefix</h4>
+                  <form method="POST" action="/dashboard/<%- guild.id %>/prefix">
+                    <input name="prefix" type="text" class="form__field" value="<%= prefix %>" placeholder="Your prefix." maxlength="2" />
+                    <input type="submit" value="update" class="btn btn--magenta btn--inside uppercase" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <div class="card has-background-black">
+            <div class="card-content">
+              <div class="content">
+                <h4 class="title has-text-white">Moderation</h4>
+                <div class="modlogs">
+                  <h4 class="title has-text-white">Modlogs</h4>
+                  <table class="table is-fullwidth is-narrow">
+                    <thead>
+                      <tr>
+                        <th class="has-text-white">Time</th>
+                        <th class="has-text-white">User</th>
+                        <th class="has-text-white">Username</th>
+                        <th class="has-text-white">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="has-text-white"><code>Sat, Apr 15, 1996 9:40PM </code></th>
+                        <th class="has-text-white"><code>380307921952833537</code></th>
+                        <th class="has-text-white"><code>TheRealKizu#3267</code></th>
+                        <th class="has-text-white"><code>being gay</code></th>
+                      </tr>
+                      <tr>
+                        <th class="has-text-white"><code>June 6, 1944</code></th>
+                        <th class="has-text-white"><code>327849142774923266</code></th>
+                        <th class="has-text-white"><code>izu#4253</code></th>
+                        <th class="has-text-white"><code>killing nazis on normandy</code></th>
+                      </tr>
+                      <tr>
+                        <th class="has-text-white"><code>1042</code></th>
+                        <th class="has-text-white"><code>591882267123646476</code></th>
+                        <th class="has-text-white"><code>Nesqyk#7461</code></th>
+                        <th class="has-text-white"><code>nonexistent</code></th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        var imgs = document.getElementsByTagName('img')
+            for(var i=0,j=imgs.length;i<j;i++){
+                imgs[i].onerror = function(e){
+                this.parentNode.removeChild(this);
+            }
+        }
+      </script>
+
+
+
+      <%- include('partials/footer'); %>
+    </body>
+</html>

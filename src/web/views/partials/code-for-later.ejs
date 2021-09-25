@@ -1,0 +1,208 @@
+            <div class="card is-hidden1">
+              <div class="card-header"><p class="card-header-title">Modules</p></div>
+                <div class="card-content">
+                  <div class="content">
+                    <div class="container-form">
+                        <div class="container__item">
+                            <div class="container__item container__item--bottom">
+                              <p class="subtitle">Greetings</p>
+                            </div>
+                            <div class="columns">
+                              <div class="column">
+                                <form action="" method="get" class="greetings-module join-module">
+                                  <dl>
+                                      <dt><label class="subtitle label" for="channel">JOIN MESSAGE CHANNEL: </label></dt>
+                                      <dt><input list="channels" name="channel" class="form__field" id="channel" autocomplete="on"></dt>
+                                      <datalist id="channels">
+                                        <% let textChannels = guild.channels.cache.filter((ch) => ch.type === 'text') %>
+                                        <% textChannels.forEach((channel) => { %>
+                                          <option value="<%= channel.name %>">
+                                        <% }) %>
+                                        <option value="Safari">
+                                      </datalist>
+                                      <!-- <input type="submit" class="btn btn--primary btn--inside uppercase"> -->
+                                  </dl>
+                                </form>
+                              </div>
+                              <div class="column">
+                                <form action="" method="get" class="greetings-module join-module">
+                                    <dl>
+                                        <dt><label class="subtitle label" for="channel">JOIN MESSAGE: </label></dt>
+                                        <!-- <dt><input type="text" name="channel" class="form__field"></dt> -->
+                                        <dt><textarea name="joinmsg" id="textarea" class="form__field"></textarea></dt>
+                                        <!-- <input type="submit" class="btn btn--primary btn--inside uppercase"> -->
+                                    </dl>
+                                </form>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-form">
+                        <div class="container__item">
+                            <div class="container__item container__item--bottom">
+                              <p class="subtitle"></p>
+                            </div>
+                            <div class="columns">
+                              <div class="column">
+                                <form action="" method="get" class="greetings-module leave-module">
+                                  <dl>
+                                      <dt><label class="subtitle label" for="channel">LEAVE MESSAGE CHANNEL: </label></dt>
+                                      <dt><input list="channels" name="channel" class="form__field" id="channel" autocomplete="on"></dt>
+                                      <datalist id="channels">
+                                        <% textChannels.forEach((channel) => { %>
+                                          <option value="<%= channel.name %>">
+                                        <% }) %>
+                                        <option value="Safari">
+                                      </datalist>
+                                      <!-- <input type="submit" class="btn btn--primary btn--inside uppercase"> -->
+                                  </dl>
+                                </form>
+                              </div>
+                              <div class="column">
+                                <form action="" method="get" class="greetings-module join-module">
+                                    <dl>
+                                        <dt><label class="subtitle label" for="channel">LEAVE MESSAGE: </label></dt>
+                                        <!-- <dt><input type="text" name="channel" class="form__field"></dt> -->
+                                        <dt><textarea name="joinmsg" id="textarea" class="form__field"></textarea></dt>
+                                        <!-- <input type="submit" class="btn btn--primary btn--inside uppercase"> -->
+                                    </dl>
+                                </form>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+      <section class="main-content columns is-fullheight">
+  
+        <aside class="column is-2 is-narrow-mobile is-fullheight section">
+          <div class="menu-server has-text-centered">
+            <figure class="image is-128x128 is-inline-block">
+              <img class="is-rounded" src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %>.jpeg?size=128">
+            </figure>
+            <h3 class="title menu-label">
+              <%= guild.name %>
+            </h3>
+            <p class="subtitle">
+              <%= guild.memberCount %> Members
+            </p>
+            <br>
+          </div>
+          <div class="menu-dashboard">
+            <p class="menu-label is-hidden-touch">General</p>
+            <ul class="menu-list">
+              <li>
+                <a href="#" class="sidebar-item">
+                  <span class="icon"></span> Dashboard
+                </a>
+                <a href="/serverlist" class="sidebar-item">
+                  <span class="icon"></span> Serverlist
+                </a>
+              </li>
+              <li>
+            </ul>
+          </div>
+        </aside>
+      
+        <div class="container column is-10">
+          <div class="section">
+      
+            <div class="card">
+                <div class="card-content">
+                  <div class="content">
+                    <nav class="level">
+                      <div class="level-item has-text-centered">
+                        <div>
+                          <p class="heading">Prefix</p>
+                          <p class="title"><%= prefix %></p>
+                        </div>
+                      </div>
+                          <div class="level-item has-text-centered">
+                            <div>
+                              <p class="heading">Owner</p>
+                              <p class="title"><%= guild.owner.user.tag %></p>
+                            </div>
+                          </div>
+                      <div class="level-item has-text-centered">
+                        <div>
+                          <p class="heading">Member count</p>
+                          <p class="title"><%= guild.memberCount %></p>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+            </div>
+            <br />
+            
+            <div class="card is-hidden1">
+              <div class="card-header"><p class="card-header-title">Bot Settings</p></div>
+                <div class="card-content">
+                  <div class="content">
+                    <div class="level">
+                    </div>
+
+                      <div class="container-form">
+                        <div class="container__item">
+                            <div class="container__item container__item--bottom">
+                              <p class="subtitle">Command prefix</p>
+                            </div>
+                            <form method="POST" action="/handle-prefix/<%= guild.id %>">
+                              <input name="prefix" type="text" class="form__field" value="<%= prefix %>" placeholder="Your prefix." maxlength="2"/>
+                              <input type="submit" class="btn btn--primary btn--inside uppercase" />
+                            </form>
+                        </div>
+                      </div>
+                  
+                </div>
+              </div>
+            </div>
+
+          
+            
+          </div>
+        </div>
+        
+      </section>
+
+      <section class="section section-two columns">
+        <div class="container">
+          <div class="dashboard-content content">
+            <div class="dashboard-sidebar column ">
+                <aside class="column is-narrow-mobile">
+                  <div class="menu">
+                    <h4 class="menu-label menu-title title has-text-white">
+                      <%= guild.name %>
+                    </h4>
+                  </div>
+                  <div class="menu">
+                    <p class="menu-label has-text-white">
+                      General
+                    </p>
+                    <ul class="menu-list">
+                      <li><a href="" class="menu-item has-text-white">Overview</a></li>
+                    </ul>
+                    <p class="menu-label has-text-white">
+                      Modules
+                    </p>
+                    <ul class="menu-list">
+                      <li><a href="" class="menu-item has-text-white">Greetings</a></li>
+                    </ul>
+                  </div>
+                </aside>
+            </div>
+            <div class="dashboard-proper dashboard-overview column">
+              <div class="card">
+                <header class="card-header">
+                  <h2 class="title has-text-white">
+                    <%= guild.name %>'s Dashboard
+                  </h2>
+                </header>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
