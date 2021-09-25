@@ -6,6 +6,7 @@
 
 <!--- DESCRIPTION --->
   > Yet another multipurpose bot for Discord.
+  > This project was discontinued on March 26, 2021 and now archived as of September 25, 2021.
   
 <!--- BADGES --->
   [![Node](https://img.shields.io/badge/node-%3E%3D12.0-brightgreen?style=flat-square)](https://nodejs.org)
@@ -19,9 +20,3 @@
 ## — License
   * This project is licensed under the [GPL-3.0](LICENSE) license.
 -->
-
-<!--- SUPPORT --->
-## — Support
-
-   * Discord Account: `TheRealKizu#3267`
-   * Email: `therealkizu@protonmail.com`
